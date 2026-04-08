@@ -245,6 +245,12 @@ a {
     width: 100%;
 }
 
+.video-sobre video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 @media (max-width: 768px) {
     .video-sobre video {
         max-width: 100%;
@@ -314,6 +320,8 @@ a {
     justify-content: space-between;
     gap: 30px 10px;
     margin-top: 30px;
+    text-align: center;
+    margin-top: 15px;
 }
 
 .preco-txt small {
@@ -368,7 +376,8 @@ a {
     }
 
     .btn-contato {
-        margin: 0 auto;
+        display: inline-block;
+    margin-top: 10px;
     }
 }
 
