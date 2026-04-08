@@ -123,16 +123,25 @@ a {
     background-color: #fff;
     max-width: 1000px;
     min-height: 100px;
-    height: auto;
     width: 100%;
     margin: 0 auto;
     padding: 20px 30px;
 
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between; /* 🔥 ESSENCIAL */
+    align-items: center;
+    flex-wrap: nowrap; /* 🔥 impede quebrar no desktop */
     border-radius: 4px;
+}
+
+@media screen and (max-width: 600px) {
+    .info-detalhes-home {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 10px;
+    }
 }
 
 .detalhes-home-item {
@@ -224,6 +233,23 @@ a {
 
 .sobre {
     margin-top: 120px;
+}
+
+.video-sobre video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-sobre {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .video-sobre video {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 .sobre-info-container {
@@ -405,15 +431,27 @@ a {
 
 .localizacao-detalhes ul {
     display: flex;
-    gap: 50px;
     flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
 }
 
-.localizacao-detalhes ul li {
+.localizacao-detalhes li {
     display: flex;
     align-items: center;
     gap: 10px;
-    flex: 0 1 500px;
+    width: 45%;
+}
+
+@media (max-width: 768px) {
+    .localizacao-detalhes ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .localizacao-detalhes li {
+        width: 100%;
+    }
 }
 
 .map-responsive {
@@ -452,11 +490,18 @@ a {
 
 .contato-detalhes {
     flex: 1;
+        min-width: 280px; /* 🔥 evita quebrar feio */
   /*  border-right: 1px solid black; */
 }
 
 .contato-info {
     display: flex;
+    flex-wrap: wrap; /* 🔥 importante */
+    gap: 40px;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-bottom: 25px;
+    border-radius: 4px;
 }
 
 .input-container {
@@ -464,15 +509,6 @@ a {
     flex-direction: column;
 }
 
-.contato-info {
-    display: flex;
-    box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.25);
-
-    gap: 40px;
-    padding-bottom: 25px;
-    padding-top: 0px;
-    border-radius: 4px;
-}
 
 .logo-contato {
     display: block;
@@ -509,13 +545,28 @@ a {
     align-items: center;
     gap: 10px;
     color: #000;
-    font-size: 22px;
+
+    font-size: 18px; /* 🔥 reduz */
+    word-break: break-word; /* 🔥 ESSENCIAL */
 }
 
 /* separador */
 .separador {
     color: #494949;
     font-size: 25px;
+}
+
+@media (max-width: 768px) {
+    .contato-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contato-txt a {
+        justify-content: center;
+        font-size: 16px;
+    }
 }
 
 .contato-icon {
