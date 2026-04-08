@@ -546,7 +546,7 @@ a {
     gap: 10px;
     color: #000;
 
-    font-size: 18px; /* 🔥 reduz */
+    font-size: 15px; /* 🔥 reduz */
     word-break: break-word; /* 🔥 ESSENCIAL */
 }
 
