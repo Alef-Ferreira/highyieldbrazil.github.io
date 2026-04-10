@@ -46,7 +46,7 @@ a {
 
 /* HERO */
 .home {
-    max-width: 100%;
+    width: 100%;
     min-height: 100vh;
     height: auto;
     background-image: url("./imgs/banner.jpg");
@@ -138,7 +138,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     border-radius: 4px;
     gap: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -208,8 +208,9 @@ a {
 
 /* VIDEO */
 .video-sobre {
-    width: 700%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .video-sobre video {
@@ -254,7 +255,7 @@ width: 90%;
 /* TEXTO + DETALHES */
 .sobre-grid {
     display: flex;
-    gap: 60px; /* mais espaço entre os blocos */
+    gap: 20px; /* mais espaço entre os blocos */
     margin-top: 40px;
     align-items: center; /* 👈 aqui melhora MUITO a fluidez */
 }
@@ -333,7 +334,7 @@ width: 90%;
 
 /* LOCALIZAÇÃO */
 .localizacao {
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .map-responsive {
@@ -386,7 +387,6 @@ width: 90%;
 }
 
 .localizacao-detalhes li {
-    display: flex;
     align-items: center;
     gap: 10px;
     width: 100%; /* 👈 garante ocupar toda a célula */
@@ -483,6 +483,11 @@ width: 90%;
 /* 📱 MOBILE */
 /* ========================= */
 @media (max-width: 768px) {
+    .card-detalhes-home, 
+    .sobre-detalhes-group,
+    .localizacao-detalhes {
+        padding: 15px;
+    }
 
     .info-detalhes-home {
         flex-direction: column;
@@ -521,4 +526,49 @@ width: 90%;
     .contato-txt a {
         white-space: normal; /* volta a quebrar só no mobile */
     }
+
+    .detalhes-home-item {
+        flex: 1 1 100%;
+        justify-content: flex-start;
+    }
+    
+    .preco-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn-whatsapp {
+        width: 50px;
+        height: 50px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    section {
+        padding: 30px 0;
+    }
+
+    .glide__slides {
+        flex-direction: column; /* 👈 empilha */
+    }
+
+    .glide__slide {
+        flex: unset;
+        width: 100%;
+    }
+
+    .glide__slide img {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2 {
+    line-height: 1.2;
 }
